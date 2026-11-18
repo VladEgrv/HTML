@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Form 1</title>
+        <meta charset="UTF-8">
+        <style>
+            .table {
+                border: 1px solid black;
+                th, td {
+                    border: 1px solid black;
+                    padding: 2px;
+                }
+                th {
+                    background-color: lightblue;
+                }
+            }
+            .forms{
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .button {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+        
+    <body>
+        <form method="get">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td><label for="input-username">Name</label></td>
+                    <td>
+                        <input type="text" class="forms" id="input-username" name="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sex</td>
+                    <td>
+                        <input type="radio" name="sex" value="male" id="choose-sex-male">
+                        <label for="choose-sex-male">Male</label>
+                        <br>
+                        <input type="radio" name="sex" value="female" id="choose-sex-female">
+                        <label for="choose-sex-female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="choose-eye-color">Eye Color</label></td>
+                    <td>
+                        <select id="choose-eye-color" name="eye-color" class="forms">
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="brown">Brown</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Check all that apply</td>
+                    <td>
+                        <input type="checkbox" id="over-6-feet-tall" name="over-6-feet-tall" value="true">
+                        <label for="over-6-feet-tall">Over 6 feet tall</label>
+                        <br>
+                        <input type="checkbox" id="over-200-pounds" name="over-200-pounds" value="true">
+                        <label for="over-200-pounds">Over 200 pounds</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="athletic-ability">Describe your athletic ability:</label>
+                        <textarea id="athletic-ability" class="forms" rows="4" name="athletic-ability"></textarea>
+                    </td>    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button id="submit-button" class="button" type="submit">Enter my information</button>
+                    </td>       
+                </tr>
+            </table>
+        </form>
+    </body>
+</html> 
