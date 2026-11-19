@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title> Form 2</title>
+        <meta charset="UTF-8">
+        <style>
+            hr {
+                width: 100%;
+                border: none;
+                border-top: 1px solid gray;
+            }
+            .form-grid {
+                display: grid;
+                grid-template-columns: 200px 500px;
+                gap: 5px 10px;
+                align-items: center;
+            }
+            .required-label::before {
+                content: "* ";
+                color: red;
+            }
+            .container {
+                display: flex;
+                gap: 5px;
+                input {
+                    flex: 2;
+                }
+
+                select {
+                    flex: 1;
+                }
+            }
+            .forms {
+                box-sizing: border-box;
+            }
+            .template-format {
+                color: red;
+                font-size: medium;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form method="get" class="form-grid">
+            <hr>
+            <hr>
+            <label for="content-id" class="required-label">Content ID</label>
+            <input type="text" id="content-id" name="content-id" class="forms" required>
+
+            <label for="content-type" class="required-label">Type</label>
+            <select id="content-type" name="content-type" class="forms" required>
+                <option value="ADDACT">ADDACT - Acme Accounting department</option>
+                <option value="ADDHR">ADDHR - Acme Human Resources department</option>
+                <option value="ADDIT">ADDIT - Acme IT department</option>
+                <option value="ADDMKT">ADDMKT - Acme Marketing department</option>
+                <option value="ADDOPS">ADDOPS - Acme Operations department</option>
+                <option value="ADDPRD">ADDPRD - Acme Product department</option>
+            </select>
+            <label for="filer" class="required-label">Filer</label>
+            <div class="container">
+                <input type="text" id="filer" name="filer" class="forms" value="sysadmin" required>
+                <select name="filer-select" id="filer-select" class="forms" required>
+                    <option value="sysadmin">sysadmin</option>
+                    <option value="admin">admin</option>
+                    <option value="user">user</option>
+                    <option value="guest">guest</option>
+                </select>
+            </div>
+
+            <label for="security-group-select" class="required-label">Security Group</label>
+            <select name="security-group" id="security-group-select" class="forms" required>
+                <option value="public">public</option>
+                <option value="internal">internal</option>
+                <option value="private">private</option>                
+            </select>
+            <hr>
+            <hr>
+            <span class="template-format">Template Format</span>
+            <div>              
+                <input type="radio" id="template-html" name="template-format" value="html" checked>
+                <label for="template-html" class="template-format">HTML Conversion Template</label>
+                <input type="radio" id="template-html-classic" name="template-format" value="classic-html">
+                <label for="template-html-classic" class="template-format">Classic HTML Conversion Template</label>
+            </div>
+            <hr>
+            <hr>
+            <label for="revision" class="required-label">Revision</label>
+            <input type="text" id="revision" name="revision" class="forms" required>
+            <label for="folder">Folder</label>
+            <div class="container">
+                <input type="text" id="folder" name="folder" class="forms">
+                <input type="file" id="folder-file" name="folder-file" class="forms">
+            </div>
+            <label for="hidden">Hidden</label>
+            <select name="hidden" id="hidden" class="forms">
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" class="forms" rows="4"></textarea>
+            <label for="user-access-list">User Access List</label>
+            <textarea id="user-access-list" name="user-access-list" class="forms" rows="4"></textarea>
+            <label for="trash-delete-old-name">Trash Delete Old Name</label>
+            <textarea id="trash-delete-old-name" name="trash-delete-old-name" class="forms" rows="4"></textarea>
+            <label for="trash-delete-location">Trash Delete Location</label>
+            <div class="container">
+                <input type="text" id="trash-delete-location" name="trash-delete-location" class="forms">
+                <input type="file" id="trash-delete-location-button" name="trash-delete-location-button" class="forms">
+            </div>
+            <label for="trash-date-button">Trash Delete Date</label>
+            <div class="container">
+                <input type="date" id="trash-date-button" name="trash-date" class="forms"> 
+            </div>
+            <label for="trash-deleter">Trash Deleter</label>
+            <input type="text" id="trash-deleter" name="trash-deleter" class="forms">
+            <hr>
+            <hr>
+            <button id="submit-button" type="submit">Submit</button>
+        </form>
+    </body>
+</html>
